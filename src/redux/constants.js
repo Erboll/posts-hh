@@ -1,2 +1,3 @@
-export const CLICK_SAGA = "CLICK_SAGA";
-export const SET_POSTS = "SET_POSTS";
+export const LOAD_POSTS = "LOAD_POSTS";
+export const LOAD_POSTS_SUCCESS = "LOAD_POSTS_SUCCESS";
+export const LOAD_POSTS_ERROR = "LOAD_POSTS_ERROR";

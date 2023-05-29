@@ -1,15 +1,31 @@
-import { SET_POSTS } from "../constants";
+import { LOAD_POSTS, LOAD_POSTS_SUCCESS, LOAD_POSTS_ERROR } from "../constants";
 
 const initial = {
-  posts: [],
+  loading: false,
+  data: null,
+  error: null,
 };
 
 const posts = (state = initial, action) => {
   switch (action.type) {
-    case SET_POSTS: {
+    case LOAD_POSTS: {
       return {
         ...state,
-        posts: [...state.posts, ...action.payload],
+        loading: true,
+      };
+    }
+    case LOAD_POSTS_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        data: action.payload,
+      };
+    }
+    case LOAD_POSTS_ERROR: {
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
       };
     }
     default:
