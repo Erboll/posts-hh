@@ -1,6 +1,19 @@
 import axios from "axios";
-import { all, call, fork, put, spawn, takeEvery } from "redux-saga/effects";
-import { LOAD_POSTS_SUCCESS, LOAD_POSTS } from "../../constants";
+import { call, fork, put, select, takeEvery } from "redux-saga/effects";
+import {
+  LOAD_POSTS,
+  LOAD_POSTS_SUCCESS,
+  LOAD_USER_DETAILS,
+  LOAD_USER_DETAILS_SUCCESS,
+} from "../../constants";
+
+export function* loadDetailsUser({ payload }) {
+  const data = yield call(
+    axios.get,
+    "https://jsonplaceholder.typicode.com/users/" + payload
+  );
+  yield put({ type: LOAD_USER_DETAILS_SUCCESS, payload: data.data });
+}
 
 export function* loadPosts() {
   const data = yield call(
@@ -12,4 +25,5 @@ export function* loadPosts() {
 
 export function* postsSaga() {
   yield takeEvery(LOAD_POSTS, loadPosts);
+  yield takeEvery(LOAD_USER_DETAILS, loadDetailsUser);
 }
