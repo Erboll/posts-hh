@@ -1,5 +1,5 @@
-import { all, spawn } from "redux-saga/effects";
-import { postsSaga } from "./postSaga/postSaga";
+import { all, spawn, takeEvery } from "redux-saga/effects";
+import { postsSaga, clickCommentSaga } from "./postSaga/postSaga";
 
 export default function* rootSaga() {
   const sagas = [postsSaga];
