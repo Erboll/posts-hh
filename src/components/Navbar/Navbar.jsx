@@ -1,55 +1,60 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MyImg from "./MyImg.jpg";
 
 const Navbar = () => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid">
-          <Link to={"/"} className="navbar-brand">
-            Navbar
-          </Link>
+    <>
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <div style={{ width: "100px" }}>
+            <img src={MyImg} alt="#" className="img-fluid mb-3 bord rounded" />
+          </div>
+          <div className="text-white mb-2">
+            Name: <i>Бетенов Ербол</i>
+          </div>
+          <div className="text-white mb-4">
+            E-mail: <i>betenov64@mail.ru</i>
+          </div>
+          <h5 class="text-white h4">Posts Head Hunter</h5>
+          <div>
+            <Link
+              className="d-block text-decoration-none text-white mb-2"
+              to={"/"}
+            >
+              Home
+            </Link>
+            <Link
+              className="d-block text-decoration-none text-white mb-2"
+              to={"/about-user/:id"}
+            >
+              About user
+            </Link>
+            <Link
+              className="d-block text-decoration-none text-white"
+              to={"/about-me"}
+            >
+              About me
+            </Link>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
           <button
-            className="navbar-toggler"
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
+            data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link to={"/"} className="nav-link " aria-current="page">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to={"/about-user"}
-                  className="nav-link "
-                  aria-current="page"
-                >
-                  About User
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to={"/about-me"}
-                  className="nav-link "
-                  aria-current="page"
-                >
-                  About me
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 

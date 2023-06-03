@@ -14,13 +14,13 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <>
       {posts ? (
         posts.map((post) => <Posts key={post.id} post={post} />)
       ) : (
         <Spinner />
       )}
-    </div>
+    </>
   );
 };
 

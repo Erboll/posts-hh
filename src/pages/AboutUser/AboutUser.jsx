@@ -7,6 +7,7 @@ import {
   LOAD_USER_DETAILS_POSTS,
 } from "../../redux/constants";
 import Posts from "../../components/Posts/Posts";
+import BackBtn from "../../components/BackBtn/BackBtn";
 
 const AboutUser = () => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const AboutUser = () => {
 
   return (
     <div>
+      <BackBtn />
       {user ? (
         <div className="card">
           <div className="card card-body">
