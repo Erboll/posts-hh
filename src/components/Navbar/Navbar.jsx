@@ -5,8 +5,8 @@ import MyImg from "./MyImg.jpg";
 const Navbar = () => {
   return (
     <>
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
+      <div className="collapse" id="navbarToggleExternalContent">
+        <div className="bg-dark p-4">
           <div style={{ width: "100px" }}>
             <img src={MyImg} alt="#" className="img-fluid mb-3 bord rounded" />
           </div>
@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className="text-white mb-4">
             E-mail: <i>betenov64@mail.ru</i>
           </div>
-          <h5 class="text-white h4">Posts Head Hunter</h5>
+          <h5 className="text-white h4">Posts Head Hunter</h5>
           <div>
             <Link
               className="d-block text-decoration-none text-white mb-2"
@@ -39,10 +39,10 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container-fluid">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarToggleExternalContent"
@@ -50,7 +50,7 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav>

@@ -1,9 +1,15 @@
-import { LOAD_POSTS, LOAD_POSTS_SUCCESS, LOAD_POSTS_ERROR } from "../constants";
+import {
+  LOAD_POSTS,
+  LOAD_POSTS_SUCCESS,
+  LOAD_POSTS_ERROR,
+  FILTER_POST,
+} from "../constants";
 
 const initial = {
   loading: false,
   data: null,
   error: null,
+  filteredTitle: null,
 };
 
 const posts = (state = initial, action) => {
@@ -14,6 +20,19 @@ const posts = (state = initial, action) => {
         loading: true,
       };
     }
+
+    case FILTER_POST:
+      if (!action.payload) {
+        return { ...state, filteredByTitle: null };
+      }
+      const filtered = state.data.filter((post) =>
+        post.title.includes(action.payload)
+      );
+
+      return {
+        ...state,
+        filteredTitle: filtered,
+      };
     case LOAD_POSTS_SUCCESS: {
       return {
         ...state,

@@ -10,7 +10,7 @@ const initial = {
   error: null,
 };
 
-const userDetails = (state = initial, action) => {
+const postsOfUser = (state = initial, action) => {
   switch (action.type) {
     case LOAD_USER_DETAILS_POSTS: {
       return {
@@ -37,4 +37,4 @@ const userDetails = (state = initial, action) => {
   }
 };
 
-export default userDetails;
+export default postsOfUser;
