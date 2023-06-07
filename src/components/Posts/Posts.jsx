@@ -21,11 +21,14 @@ const Posts = ({ post }) => {
         </Link>
         <h2>{post.title}</h2>
         <p>{post.body}</p>
-        <button onClick={getComments} className="btn btn-primary">
-          Comments
-        </button>
-        {showComments && (
+        {showComments ? (
           <div>
+            <button
+              className="btn btn-danger"
+              onClick={() => setShowComments(false)}
+            >
+              Close
+            </button>
             {comments &&
               comments.map((com) => (
                 <div key={com.id} className="card card-body mt-3">
@@ -34,6 +37,10 @@ const Posts = ({ post }) => {
                 </div>
               ))}
           </div>
+        ) : (
+          <button onClick={getComments} className="btn btn-primary">
+            Comments
+          </button>
         )}
       </div>
     </>

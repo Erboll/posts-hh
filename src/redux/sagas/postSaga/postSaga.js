@@ -29,7 +29,7 @@ export function* loadPostsOfUser({ payload }) {
 export function* loadCommentsOfPosts({ payload }) {
   const data = yield call(
     axios.get,
-    "https://jsonplaceholder.typicode.com/posts/" + payload + "/comments"
+    "https://jsonplaceholder.typicode.com/comments?postId=" + payload
   );
   yield put({ type: LOAD_COMMENTS_SUCCESS, payload: data.data });
 }

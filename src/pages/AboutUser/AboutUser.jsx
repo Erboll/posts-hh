@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import BackBtn from "../../components/BackBtn/BackBtn";
 import Spinner from "../../components/Spinner/Spinner";
 import {
   LOAD_USER_DETAILS,
   LOAD_USER_DETAILS_POSTS,
 } from "../../redux/constants";
-import Posts from "../../components/Posts/Posts";
-import BackBtn from "../../components/BackBtn/BackBtn";
 
 const AboutUser = () => {
   const { id } = useParams();
