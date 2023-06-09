@@ -20,7 +20,7 @@ const Navbar = () => {
           <div>
             <Link
               className="d-block text-decoration-none text-white mb-2"
-              to={"/"}
+              to={"/posts-hh"}
             >
               Home
             </Link>

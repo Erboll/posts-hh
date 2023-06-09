@@ -5,7 +5,10 @@ const BackBtn = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <button onClick={() => navigate("/")} className="btn btn-secondary m-3">
+      <button
+        onClick={() => navigate("/posts-hh")}
+        className="btn btn-secondary m-3"
+      >
         Back
       </button>
     </div>
